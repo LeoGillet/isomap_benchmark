@@ -1,0 +1,6 @@
+Bench 061122 22:49:41
+Total time : 0.00028 seconds
+Max threads : 15
+Samples : {1000}
+Components : {25}
+Data types : ['swiss_roll']
