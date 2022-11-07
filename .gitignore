@@ -1,0 +1,8 @@
+*.cpython*
+results/*
+saved/*
+*.ipynb
+*.c
+*libso*
+*.iml
+.idea/*
