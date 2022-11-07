@@ -6,3 +6,4 @@ saved/*
 *libso*
 *.iml
 .idea/*
+.build/*
