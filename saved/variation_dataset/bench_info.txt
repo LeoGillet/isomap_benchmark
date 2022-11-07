@@ -1,6 +1,0 @@
-Bench 061122 23:29:55
-Total time : 0.00117 seconds
-Max threads : 15
-Samples : {1000}
-Components : {25}
-Data types : ['blobs', 'gaussian_quantiles', 'moons']

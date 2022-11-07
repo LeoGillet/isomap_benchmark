@@ -1,6 +1,0 @@
-Bench 061122 22:50:44
-Total time : 0.00024 seconds
-Max threads : 15
-Samples : {1000}
-Components : {25}
-Data types : ['friedman1']
