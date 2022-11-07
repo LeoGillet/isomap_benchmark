@@ -1,14 +1,15 @@
 import threading
-from time import sleep
+import warnings
 from os.path import exists
-
-import plots
-from modules.objects import *
+from time import sleep
 
 import scipy
-import warnings
-warnings.filterwarnings(action='ignore', category=scipy.sparse.SparseEfficiencyWarning) # setting ignore as a parameter and further adding category
+from modules.objects import *
 
+import plots
+
+warnings.filterwarnings(action='ignore',
+						category=scipy.sparse.SparseEfficiencyWarning)  # setting ignore as a parameter and further adding category
 
 dn = "./"
 
@@ -70,14 +71,15 @@ def process_dataset(dataset_name, dirname):
 	for n in neighbors:
 		result, execution_info = data.compute_isomap(n, data.n_features)
 		results.append(result)
-		fp = dirname+"run_results.csv"
+		fp = dirname + "run_results.csv"
 		write_execution_info_to_file(execution_info, fp)
 
 def run_dataset(dataset_name, rps=1, threads=5, dirname="default/"):
 	for _ in range(rps):
 		thread_bench(process_dataset, args=(dataset_name, dirname,))
 
-def run_benchmark(samples_list=[500], features_list=[50], datatype_list=["blobs"], dirname="default/", showfig=False, savefig=False,
+def run_benchmark(samples_list=[500], features_list=[50], datatype_list=["blobs"], dirname="default/", showfig=False,
+				  savefig=False,
 				  threads=5, rps=1):
 	_warned = False
 	global dn

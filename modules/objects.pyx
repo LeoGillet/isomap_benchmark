@@ -1,14 +1,10 @@
-import warnings
+from statistics import mean
 from timeit import default_timer as timer
 
-from sklearn.manifold import Isomap
-from sklearn.metrics import f1_score
-from sklearn.neighbors import BallTree
-from sklearn.cluster import KMeans
-import sklearn.datasets as skds
-
 import pandas as pd
-from statistics import mean
+import sklearn.datasets as skds
+from sklearn.manifold import Isomap
+from sklearn.neighbors import BallTree
 
 def _load_dataset(filename="dataset.csv", **kwargs):
 	return pd.read_csv(filename, **kwargs)

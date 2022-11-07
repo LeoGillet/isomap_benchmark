@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
+import argparse
 import os
 import platform
-from datetime import date, datetime
-from timeit import default_timer as timer
-from os.path import exists, isdir
 import sys
-import argparse
+from datetime import date, datetime
+from os.path import exists, isdir
+from timeit import default_timer as timer
 
 import pyximport
 
@@ -151,7 +151,6 @@ if __name__ == '__main__':
 	### Late import after compilation
 	from modules.benchmarks import run_benchmark, run_dataset
 
-
 	if args.clean_cython:
 		clean_cython()
 	if args.clean_results:
@@ -172,7 +171,8 @@ if __name__ == '__main__':
 	if args.generate:  # User generates data
 		start = timer()
 
-		run_benchmark(samples_list=args.samples, features_list=args.features, datatype_list=args.generate, dirname=dirname, threads=max_threads, rps=runs_per_set)
+		run_benchmark(samples_list=args.samples, features_list=args.features, datatype_list=args.generate,
+					  dirname=dirname, threads=max_threads, rps=runs_per_set)
 		end = timer()  # Specific dataset is mentioned in launch arguments
 	with open(f"results/{dirname}bench_info.txt", 'w') as file:
 		file.write(f"Bench {date.today().strftime('%d%m%y')} {datetime.now().strftime('%H:%M:%S')}\n")
